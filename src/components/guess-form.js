@@ -6,11 +6,13 @@ import { makeGuess } from '../actions';
 import './guess-form.css';
 
 export class GuessForm extends React.Component {
+
   onSubmit(event) {
     event.preventDefault();
 
     const value = this.input.value;
-    this.props.dispatch(makeGuess(value));
+    this.props.dispatch(makeGuess(value+1));
+
     this.input.value = '';
     this.input.focus();
   }
